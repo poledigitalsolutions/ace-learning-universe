@@ -5149,3 +5149,634 @@ body {
     top: 26% !important;
   }
 }
+
+/* ============================================================
+   FINAL REGISTRATION PROMO — BOTTOM LEFT UNDER LEFT INFO IMAGE
+   The registration-promo.webp is aligned with the left-info image
+   and placed directly underneath it, on the left side of the scene.
+   All existing styling is preserved.
+============================================================ */
+
+.registration-promo {
+  left: 3.2vw !important;
+  top: calc(2.5vh + 78px + min(15vw, 300px) + 24px) !important;
+  right: auto !important;
+  bottom: auto !important;
+  z-index: 84 !important;
+}
+
+@media (min-width: 1440px) {
+  .registration-promo {
+    left: 3.2vw !important;
+    top: calc(2.5vh + 78px + min(15vw, 320px) + 24px) !important;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1439px) {
+  .registration-promo {
+    left: 3.2vw !important;
+    top: calc(2.5vh + 78px + clamp(190px, 15vw, 280px) + 20px) !important;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .registration-promo {
+    left: 2.5vw !important;
+    top: calc(1.5vh + 78px + clamp(125px, 20vw, 205px) + 16px) !important;
+    width: clamp(92px, 12vw, 120px) !important;
+  }
+}
+
+@media (max-width: 600px) and (orientation: portrait) {
+  .registration-promo {
+    left: 3vw !important;
+    top: calc(1.5vh + 82px + clamp(112px, 35vw, 165px) + 14px) !important;
+    width: clamp(78px, 22vw, 105px) !important;
+  }
+}
+
+@media (max-width: 390px) and (orientation: portrait) {
+  .registration-promo {
+    left: 3vw !important;
+    top: calc(1.5vh + 82px + clamp(112px, 35vw, 155px) + 12px) !important;
+    width: clamp(74px, 21vw, 94px) !important;
+  }
+}
+
+@media (max-width: 900px) and (orientation: landscape) {
+  .registration-promo {
+    left: 2.5vw !important;
+    top: calc(1.5vh + 70px + clamp(110px, 20vw, 180px) + 14px) !important;
+    width: clamp(82px, 11vw, 105px) !important;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 700px) {
+  .registration-promo {
+    top: calc(1.5vh + 70px + clamp(105px, 18vw, 165px) + 12px) !important;
+  }
+}
+
+/* ============================================================
+   FINAL POSITION — REGISTRATION PROMO BELOW LEFT INFO PANEL
+   Keep the complete existing stylesheet unchanged. These final
+   overrides move only the registration artwork farther down.
+============================================================ */
+.registration-promo {
+  left: 3.2vw !important;
+  top: 40vh !important;
+  right: auto !important;
+  bottom: auto !important;
+}
+
+@media (min-width: 1440px) {
+  .registration-promo {
+    left: 3.2vw !important;
+    top: 40vh !important;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1439px) {
+  .registration-promo {
+    left: 3.2vw !important;
+    top: 39vh !important;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .registration-promo {
+    left: 2.5vw !important;
+    top: 38vh !important;
+  }
+}
+
+@media (max-width: 600px) and (orientation: portrait) {
+  .registration-promo {
+    left: 3vw !important;
+    top: 43vh !important;
+  }
+}
+
+@media (max-width: 390px) and (orientation: portrait) {
+  .registration-promo {
+    left: 3vw !important;
+    top: 44vh !important;
+  }
+}
+
+@media (max-width: 900px) and (orientation: landscape) {
+  .registration-promo {
+    left: 2.5vw !important;
+    top: 36vh !important;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 700px) {
+  .registration-promo {
+    top: 34vh !important;
+  }
+}
+
+
+/* ============================================================
+   FINAL RESPONSIVE COMPOSITION — CLEAN PORTRAIT + DESKTOP
+   ------------------------------------------------------------
+   This is the LAST override block. It preserves every existing
+   rule above and only corrects the final visual composition:
+   - registration promo sits below the left information artwork
+   - portrait phones get clear vertical separation
+   - castle no longer collides with the left panel
+   - subject islands remain visible above the feature strip
+   - desktop/laptop spacing stays balanced
+   - floating objects keep their existing animation/hover behavior
+============================================================ */
+
+/* ------------------------------------------------------------
+   DESKTOP / LAPTOP — 1200px+
+------------------------------------------------------------ */
+@media (min-width: 1200px) {
+  .brand-area {
+    left: 3.2vw !important;
+    top: 2.5vh !important;
+    width: min(18vw, 350px) !important;
+  }
+
+  .left-info-image-button {
+    width: min(15vw, 300px) !important;
+    max-width: 300px !important;
+  }
+
+  /* Directly below the left information artwork. */
+  .registration-promo {
+    left: 0 !important;
+    top: 54vh !important;
+    width: clamp(92px, 7vw, 118px) !important;
+    z-index: 90 !important;
+  }
+
+  .castle-world {
+    width: clamp(600px, 59vw, 1040px) !important;
+    top: 18.5% !important;
+  }
+
+  .subject-world {
+    bottom: 4.8vh !important;
+    height: 38% !important;
+  }
+}
+
+/* ------------------------------------------------------------
+   NORMAL LAPTOPS — 901px to 1199px
+------------------------------------------------------------ */
+@media (min-width: 901px) and (max-width: 1199px) {
+  .brand-area {
+    left: 3.2vw !important;
+    top: 2.5vh !important;
+    width: min(19vw, 270px) !important;
+  }
+
+  .left-info-image-button {
+    width: clamp(190px, 18vw, 250px) !important;
+    max-width: 250px !important;
+  }
+
+  .registration-promo {
+    left: 0 !important;
+    top: 50vh !important;
+    width: clamp(82px, 8vw, 105px) !important;
+    z-index: 90 !important;
+  }
+
+  .castle-world {
+    width: clamp(520px, 63vw, 820px) !important;
+    top: 19% !important;
+  }
+
+  .subject-world {
+    bottom: 4.8vh !important;
+    height: 37% !important;
+  }
+}
+
+/* ------------------------------------------------------------
+   TABLET — 601px to 900px
+------------------------------------------------------------ */
+@media (min-width: 601px) and (max-width: 900px) {
+  .brand-area {
+    left: 2.5vw !important;
+    top: 1.8vh !important;
+    width: clamp(190px, 28vw, 260px) !important;
+  }
+
+  .left-info-image-button {
+    width: clamp(170px, 24vw, 215px) !important;
+    max-width: 215px !important;
+  }
+
+  .registration-promo {
+    left: 0 !important;
+    top: 47vh !important;
+    width: clamp(78px, 11vw, 100px) !important;
+    z-index: 90 !important;
+  }
+
+  .why-balloon {
+    left: 31% !important;
+    top: 5% !important;
+  }
+
+  .contact-airship {
+    top: 5% !important;
+  }
+
+  .price-scroll {
+    top: 30% !important;
+  }
+
+  .castle-world {
+    width: min(68vw, 610px) !important;
+    top: 20% !important;
+  }
+
+  .subject-world {
+    bottom: 7vh !important;
+    height: 31% !important;
+  }
+}
+
+/* ------------------------------------------------------------
+   PORTRAIT PHONES — 601px and below
+   ------------------------------------------------------------
+   The phone composition is deliberately separated into zones:
+   top controls -> left information -> registration -> castle ->
+   subject islands -> bottom utility strip.
+------------------------------------------------------------ */
+@media (max-width: 600px) and (orientation: portrait) {
+  html,
+  body {
+    overflow: hidden !important;
+  }
+
+  .universe {
+    height: 100dvh !important;
+    min-height: 0 !important;
+    max-height: 100dvh !important;
+    overflow: hidden !important;
+  }
+
+  .brand-area {
+    left: 3.5vw !important;
+    top: 1.2vh !important;
+    width: 40vw !important;
+    z-index: 110 !important;
+  }
+
+  .logo-button {
+    width: clamp(78px, 24vw, 96px) !important;
+    height: auto !important;
+  }
+
+  .left-info-image-button {
+    width: clamp(150px, 39vw, 205px) !important;
+    max-width: 205px !important;
+    margin-top: 0.8vh !important;
+  }
+
+  /* Registration is now genuinely below the left information panel,
+     rather than beside the balloon. */
+  .registration-promo {
+    left: 0 !important;
+    top: 47vh !important;
+    width: clamp(82px, 22vw, 108px) !important;
+    z-index: 120 !important;
+  }
+
+  .registration-promo .click-hint {
+    right: -5px !important;
+    bottom: 8% !important;
+    font-size: clamp(0.27rem, 1.05vw, 0.37rem) !important;
+    padding: 3px 5px !important;
+  }
+
+  /* Keep the balloon clearly above the castle and away from the
+     information artwork. */
+  .why-balloon {
+    left: 39% !important;
+    top: 4% !important;
+    width: clamp(88px, 23vw, 120px) !important;
+    max-width: 120px !important;
+    z-index: 80 !important;
+  }
+
+  .contact-airship {
+    top: 4% !important;
+    right: 0.5vw !important;
+    width: clamp(122px, 33vw, 170px) !important;
+    max-width: 170px !important;
+    z-index: 85 !important;
+  }
+
+  .price-scroll {
+    top: 29% !important;
+    right: 2vw !important;
+    left: auto !important;
+    width: clamp(105px, 27vw, 142px) !important;
+    max-width: 142px !important;
+    z-index: 82 !important;
+  }
+
+  /* A smaller, lower castle leaves a clean band between the left
+     information/registration area and the central academy. */
+  .castle-world {
+    width: min(66vw, 490px) !important;
+    left: 50% !important;
+    top: 31% !important;
+    transform: translateX(-50%) !important;
+    z-index: 25 !important;
+  }
+
+  .castle-button {
+    left: 7% !important;
+    right: 7% !important;
+    top: 2% !important;
+    bottom: 14% !important;
+  }
+
+  .castle-image {
+    transform: scale(1.08) !important;
+    transform-origin: center center !important;
+  }
+
+  .castle-world:hover .castle-image {
+    transform: scale(1.12) !important;
+  }
+
+  .bridge {
+    height: 4px !important;
+  }
+
+  /* Bring all seven learning islands clearly into view above the
+     bottom strip instead of letting them disappear behind it. */
+  .subject-world {
+    left: 1vw !important;
+    right: 1vw !important;
+    bottom: 9.5vh !important;
+    height: 25% !important;
+    z-index: 40 !important;
+  }
+
+  .subject-island {
+    width: 13.2vw !important;
+    min-width: 0 !important;
+  }
+
+  .subject-name {
+    bottom: 18% !important;
+    font-size: clamp(0.32rem, 1.75vw, 0.54rem) !important;
+  }
+
+  .click-hint {
+    padding: 3px 5px !important;
+    gap: 2px !important;
+    font-size: clamp(0.27rem, 1.05vw, 0.38rem) !important;
+  }
+
+  .click-hint svg {
+    width: 8px !important;
+    height: 8px !important;
+  }
+
+  .feature-strip {
+    left: 1.5vw !important;
+    right: 1.5vw !important;
+    bottom: 1.8vh !important;
+    height: 4.5vh !important;
+    min-height: 30px !important;
+    gap: 3px !important;
+    z-index: 100 !important;
+  }
+
+  .feature-item {
+    gap: 2px !important;
+    font-size: clamp(0.29rem, 1.18vw, 0.42rem) !important;
+  }
+
+  .feature-item svg {
+    width: 9px !important;
+    height: 9px !important;
+  }
+
+  .enroll-book {
+    width: clamp(76px, 21vw, 100px) !important;
+    right: 1vw !important;
+    bottom: 6.5vh !important;
+    z-index: 105 !important;
+  }
+}
+
+/* ------------------------------------------------------------
+   VERY SMALL PORTRAIT — 390px and below
+------------------------------------------------------------ */
+@media (max-width: 390px) and (orientation: portrait) {
+  .brand-area {
+    left: 3vw !important;
+    width: 42vw !important;
+  }
+
+  .logo-button {
+    width: 78px !important;
+  }
+
+  .left-info-image-button {
+    width: clamp(142px, 40vw, 178px) !important;
+  }
+
+  .registration-promo {
+    left: 0 !important;
+    top: 49vh !important;
+    width: clamp(76px, 21vw, 94px) !important;
+  }
+
+  .why-balloon {
+    left: 40% !important;
+    top: 4.5% !important;
+    width: clamp(82px, 22vw, 105px) !important;
+  }
+
+  .contact-airship {
+    width: clamp(112px, 32vw, 145px) !important;
+  }
+
+  .price-scroll {
+    top: 30% !important;
+    width: clamp(98px, 26vw, 128px) !important;
+  }
+
+  .castle-world {
+    width: min(65vw, 400px) !important;
+    top: 32% !important;
+  }
+
+  .subject-world {
+    bottom: 10vh !important;
+    height: 24% !important;
+  }
+
+  .subject-name {
+    font-size: 0.31rem !important;
+  }
+
+  .feature-item {
+    font-size: 0.28rem !important;
+  }
+
+  .enroll-book {
+    width: clamp(72px, 20vw, 90px) !important;
+    bottom: 6.7vh !important;
+  }
+}
+
+/* ------------------------------------------------------------
+   SHORT PORTRAIT PHONES — prevent vertical collisions
+------------------------------------------------------------ */
+@media (max-width: 600px) and (orientation: portrait) and (max-height: 700px) {
+  .why-balloon {
+    top: 3.5% !important;
+  }
+
+  .contact-airship {
+    top: 3.5% !important;
+  }
+
+  .registration-promo {
+    top: 45vh !important;
+  }
+
+  .castle-world {
+    width: min(64vw, 390px) !important;
+    top: 29% !important;
+  }
+
+  .subject-world {
+    bottom: 10vh !important;
+    height: 23% !important;
+  }
+
+  .feature-strip {
+    bottom: 1.5vh !important;
+  }
+
+  .enroll-book {
+    bottom: 6.2vh !important;
+  }
+}
+
+/* ------------------------------------------------------------
+   LANDSCAPE PHONES / SMALL TABLETS
+------------------------------------------------------------ */
+@media (max-width: 900px) and (orientation: landscape) {
+  .brand-area {
+    left: 2.5vw !important;
+    top: 1.2vh !important;
+    width: clamp(150px, 25vw, 215px) !important;
+  }
+
+  .logo-button {
+    width: clamp(82px, 11vw, 105px) !important;
+  }
+
+  .left-info-image-button {
+    width: clamp(125px, 20vw, 195px) !important;
+  }
+
+  .registration-promo {
+    left: 0 !important;
+    top: 43vh !important;
+    width: clamp(68px, 9vw, 92px) !important;
+    z-index: 90 !important;
+  }
+
+  .why-balloon {
+    left: 25% !important;
+    top: 3% !important;
+    width: clamp(82px, 14vw, 130px) !important;
+  }
+
+  .contact-airship {
+    top: 3% !important;
+    right: 1vw !important;
+    width: clamp(120px, 22vw, 185px) !important;
+  }
+
+  .price-scroll {
+    top: 34% !important;
+    right: 2.5vw !important;
+    width: clamp(105px, 17vw, 155px) !important;
+  }
+
+  .castle-world {
+    width: min(58vw, 520px) !important;
+    top: 13% !important;
+  }
+
+  .subject-world {
+    bottom: 8vh !important;
+    height: 31% !important;
+  }
+
+  .feature-strip {
+    bottom: 1.5vh !important;
+    height: 5vh !important;
+  }
+
+  .enroll-book {
+    width: clamp(76px, 10vw, 102px) !important;
+    bottom: 5.8vh !important;
+  }
+}
+
+@media (max-width: 900px) and (orientation: landscape) and (max-height: 700px) {
+  .registration-promo {
+    top: 40vh !important;
+  }
+
+  .castle-world {
+    top: 11% !important;
+    width: min(56vw, 490px) !important;
+  }
+
+  .subject-world {
+    bottom: 7.5vh !important;
+    height: 30% !important;
+  }
+}
+
+/* ------------------------------------------------------------
+   TOUCHSCREENS — no sticky hover state
+------------------------------------------------------------ */
+@media (hover: none) and (pointer: coarse) {
+  .registration-promo:hover {
+    transform: none !important;
+    translate: none !important;
+    filter: none !important;
+  }
+
+  .castle-world:hover .castle-image {
+    filter: none !important;
+  }
+}
+
+/* ------------------------------------------------------------
+   SAFE AREA — keep bottom controls clear of device UI
+------------------------------------------------------------ */
+@supports (padding: env(safe-area-inset-bottom)) {
+  @media (max-width: 600px) {
+    .feature-strip {
+      bottom: max(1.8vh, env(safe-area-inset-bottom)) !important;
+    }
+
+    .enroll-book {
+      bottom: max(6.5vh, calc(env(safe-area-inset-bottom) + 4vh)) !important;
+    }
+  }
+}
