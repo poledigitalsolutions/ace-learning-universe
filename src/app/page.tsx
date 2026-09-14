@@ -161,6 +161,7 @@ type ModalType =
   | "journey"
   | "pricing"
   | "enroll"
+  | "registration"
   | null;
 
 export default function Home() {
@@ -278,6 +279,22 @@ export default function Home() {
           />
         </button>
 
+        <button
+          className="registration-promo interactive-object"
+          onClick={() => setModal("registration")}
+          aria-label="Registration offers"
+          type="button"
+        >
+          <img
+            src="/images/registration-promo.webp"
+            alt="Registration offers"
+          />
+
+          <ClickHint
+            text="OPEN OFFERS"
+            position="hint-right"
+          />
+        </button>
       </section>
 
       {/* =========================================================
@@ -504,6 +521,10 @@ export default function Home() {
 
           {modal === "enroll" && (
             <EnrollModal onClose={closeModal} />
+          )}
+
+          {modal === "registration" && (
+            <RegistrationModal onClose={closeModal} />
           )}
         </ModalOverlay>
       )}
@@ -1197,6 +1218,52 @@ function EnrollModal({
           WHATSAPP
         </a>
 
+        <button
+          className="secondary-button"
+          onClick={onClose}
+          type="button"
+        >
+          CLOSE
+        </button>
+      </div>
+    </div>
+  );
+}
+
+/* =============================================================
+   REGISTRATION OFFERS MODAL
+============================================================= */
+
+function RegistrationModal({
+  onClose,
+}: {
+  onClose: () => void;
+}) {
+  return (
+    <div className="modal-content standard-modal registration-promo-modal">
+      <span className="modal-eyebrow">
+        ACE LEARNING UNIVERSE
+      </span>
+
+      <h2>Registration Offers</h2>
+
+      <div className="modal-gold-line" />
+
+      <div className="registration-promo-list">
+        <div className="registration-promo-item">
+          Registrations are now open.
+        </div>
+
+        <div className="registration-promo-item">
+          Free Demo.
+        </div>
+
+        <div className="registration-promo-item">
+          Refer a Friend and get 2 lessons free.
+        </div>
+      </div>
+
+      <div className="modal-actions">
         <button
           className="secondary-button"
           onClick={onClose}
