@@ -298,101 +298,43 @@ img {
 }
 
 /* ============================================================
-   LEFT INFO CARDS
+   LEFT INFO PANEL IMAGE
 ============================================================ */
 
 .left-info-panel {
-  width: 100%;
-  border-radius: 13px;
-  overflow: hidden;
+  position: absolute;
+  left: 2vw;
+  top: 18vh;
+  z-index: 50;
 
-  border: 1px solid rgba(104, 170, 222, 0.5);
+  display: block !important;
 
-  box-shadow:
-    0 15px 35px rgba(0, 0, 0, 0.34),
-    inset 0 0 25px rgba(35, 117, 179, 0.1);
+  width: auto;
+  max-width: none;
+
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  overflow: visible;
 }
 
-.info-card {
-  min-height: 9.2vh;
-  padding: 1.15vh 0.8vw;
+.left-info-panel-image {
+  width: 680px;
+  height: auto;
+  display: block;
 
-  display: flex;
-  align-items: center;
-  gap: 0.75vw;
-
-  background:
-    linear-gradient(
-      90deg,
-      rgba(4, 27, 59, 0.88),
-      rgba(15, 54, 90, 0.72)
-    );
-
-  border-bottom:
-    1px solid rgba(126, 183, 223, 0.25);
+  cursor: pointer;
 
   transition:
-    background 0.25s ease,
-    transform 0.25s ease;
+    transform 0.3s ease,
+    filter 0.3s ease;
 }
 
-.info-card:last-child {
-  border-bottom: 0;
+.left-info-panel-image:hover {
+  transform: scale(1.04);
+  filter: brightness(1.08);
 }
 
-.info-card:hover {
-  background:
-    linear-gradient(
-      90deg,
-      rgba(10, 45, 84, 0.96),
-      rgba(23, 76, 118, 0.86)
-    );
-}
-
-.info-icon {
-  flex: 0 0 38px;
-  width: 38px;
-  height: 38px;
-
-  color: var(--gold-light);
-
-  display: grid;
-  place-items: center;
-
-  filter:
-    drop-shadow(
-      0 0 7px rgba(244, 205, 110, 0.35)
-    );
-}
-
-.info-icon svg {
-  width: 31px;
-  height: 31px;
-  stroke-width: 1.45;
-}
-
-.info-card h3 {
-  margin: 0 0 0.3vh;
-
-  font-family: var(--serif);
-  color: #fff;
-
-  font-size:
-    clamp(0.55rem, 0.78vw, 0.9rem);
-
-  letter-spacing: 0.015em;
-  font-weight: 700;
-}
-
-.info-card p {
-  margin: 0;
-  color: #f4f4f4;
-
-  font-size:
-    clamp(0.53rem, 0.72vw, 0.84rem);
-
-  line-height: 1.3;
-}
 
 /* ============================================================
    PRICE SCROLL
@@ -2303,9 +2245,7 @@ img {
     height: 58px;
   }
 
-  .left-info-panel {
-    max-width: 245px;
-  }
+
 
   .info-card {
     min-height: 7.7vh;
@@ -2448,10 +2388,7 @@ img {
     height: 42px;
   }
 
-  .left-info-panel {
-    width: 165px;
-    max-width: none;
-  }
+
 
   .info-card {
     min-height: 6.8vh;
@@ -3061,10 +2998,6 @@ img {
   background: transparent !important;
 }
 
-/* Do not let the removed left information panel occupy visual space. */
-.left-info-panel {
-  display: none !important;
-}
 
 @media (max-width: 900px) {
   .castle-button {
@@ -3115,10 +3048,6 @@ img {
    Only the requested visual changes are added here.
 ============================================================ */
 
-/* Replace the old HTML information cards with the supplied image. */
-.left-info-panel {
-  display: none !important;
-}
 
 .left-info-image-button {
   position: relative;
@@ -3268,4 +3197,127 @@ img {
   .enroll-book {
     width: clamp(85px, 9vw, 112px) !important;
   }
+}
+/* ============================================================
+   MOBILE HERO LAYOUT
+============================================================ */
+
+@media (max-width: 768px) {
+
+  .universe {
+    min-height: 1400px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  /* Logo */
+
+  .brand-area {
+    left: 50%;
+    top: 20px;
+    transform: translateX(-50%);
+    width: auto;
+  }
+
+  .main-logo,
+  .large-logo {
+    width: 220px !important;
+  }
+
+  /* Castle */
+
+  .castle-world {
+    position: absolute;
+    left: 50%;
+    top: 180px;
+    transform: translateX(-50%);
+  }
+
+  .castle-image {
+    width: 300px !important;
+    max-width: none;
+  }
+
+
+
+  /* Balloon */
+
+  .why-balloon {
+    top: 90px !important;
+    left: 10px !important;
+    width: 130px !important;
+  }
+
+  /* Airship */
+
+  .contact-airship {
+    top: 90px !important;
+    right: 10px !important;
+    width: 160px !important;
+  }
+
+  /* Price scroll */
+
+  .price-scroll {
+    top: 260px !important;
+    right: 5px !important;
+    width: 140px !important;
+  }
+
+  /* Enroll book */
+
+  .enroll-book {
+    bottom: 140px !important;
+    right: 10px !important;
+    width: 180px !important;
+  }
+
+  /* Islands */
+
+  .subject-world {
+    position: absolute;
+    top: 700px;
+    width: 100%;
+    height: 650px;
+  }
+
+  .subject-island {
+    transform: scale(0.75);
+  }
+
+  /* Feature bar */
+
+  .feature-strip {
+    position: relative;
+    margin-top: 1250px;
+    flex-direction: column;
+    gap: 12px;
+    height: auto;
+    padding: 20px;
+  }
+
+  .strip-divider {
+    display: none;
+  }
+
+  /* Bottom slogan */
+
+  .bottom-slogan {
+    position: relative;
+    margin-top: 20px;
+    text-align: center;
+    padding: 0 20px 40px;
+  }
+}
+@media (max-width: 768px) {
+
+  .left-info-panel {
+    left: 10px;
+    top: 70px;
+  }
+
+  .left-info-panel-image {
+    width: 230px;
+  }
+
 }
