@@ -5780,3 +5780,359 @@ body {
     }
   }
 }
+
+/* ============================================================
+   FINAL REGISTRATION PROMO — BELOW BALLOON / BETWEEN LEFT PANEL
+   AND CASTLE
+
+   This is the last registration-promo rule so it overrides all
+   earlier positioning attempts. The artwork is intentionally
+   restored to approximately balloon size and moved into the open
+   space under the Why Choose ACE balloon.
+============================================================ */
+.registration-promo {
+  position: absolute !important;
+  left: 20.5vw !important;
+  top: 21vh !important;
+  width: clamp(125px, 10.5vw, 190px) !important;
+  max-width: 190px !important;
+  height: auto !important;
+  z-index: 72 !important;
+  right: auto !important;
+  bottom: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.registration-promo img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  max-width: none !important;
+  object-fit: contain !important;
+}
+
+.registration-promo .click-hint {
+  white-space: nowrap !important;
+  z-index: 3 !important;
+}
+
+/* Standard laptop / desktop */
+@media (min-width: 1200px) {
+  .registration-promo {
+    left: 20.5vw !important;
+    top: 21vh !important;
+    width: clamp(135px, 10.5vw, 205px) !important;
+    max-width: 205px !important;
+  }
+}
+
+/* Smaller laptops / landscape tablets */
+@media (min-width: 901px) and (max-width: 1199px) {
+  .registration-promo {
+    left: 21vw !important;
+    top: 22vh !important;
+    width: clamp(120px, 12vw, 165px) !important;
+    max-width: 165px !important;
+  }
+}
+
+/* Portrait tablets */
+@media (min-width: 601px) and (max-width: 900px) and (orientation: portrait) {
+  .registration-promo {
+    left: 28vw !important;
+    top: 22vh !important;
+    width: clamp(115px, 22vw, 165px) !important;
+    max-width: 165px !important;
+  }
+}
+
+/* Portrait phones — place it directly below the balloon,
+   in the narrow visual gap before the castle. */
+@media (max-width: 600px) and (orientation: portrait) {
+  .registration-promo {
+    left: 34vw !important;
+    top: 21.5vh !important;
+    width: clamp(108px, 24vw, 132px) !important;
+    max-width: 132px !important;
+    z-index: 72 !important;
+  }
+
+  .registration-promo .click-hint {
+    bottom: -16px !important;
+    font-size: clamp(0.28rem, 1.05vw, 0.38rem) !important;
+  }
+}
+
+/* Very small portrait phones */
+@media (max-width: 390px) and (orientation: portrait) {
+  .registration-promo {
+    left: 33vw !important;
+    top: 21vh !important;
+    width: clamp(104px, 25vw, 122px) !important;
+    max-width: 122px !important;
+  }
+}
+
+/* Landscape phones / small tablets */
+@media (max-width: 900px) and (orientation: landscape) {
+  .registration-promo {
+    left: 22vw !important;
+    top: 20vh !important;
+    width: clamp(105px, 13vw, 145px) !important;
+    max-width: 145px !important;
+  }
+}
+
+@media (max-width: 900px) and (orientation: landscape) and (max-height: 700px) {
+  .registration-promo {
+    left: 22vw !important;
+    top: 19vh !important;
+    width: clamp(100px, 12vw, 135px) !important;
+    max-width: 135px !important;
+  }
+}
+
+/* ============================================================
+   FINAL MICRO POSITION — MOVE REGISTRATION OFFERS A LITTLE DOWN
+   Keep the exact same size and horizontal position. Only lower
+   the artwork slightly so it no longer tucks behind the balloon.
+============================================================ */
+.registration-promo {
+  top: 23vh !important;
+}
+
+@media (min-width: 1200px) {
+  .registration-promo {
+    top: 23vh !important;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1199px) {
+  .registration-promo {
+    top: 24vh !important;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) and (orientation: portrait) {
+  .registration-promo {
+    top: 24vh !important;
+  }
+}
+
+@media (max-width: 600px) and (orientation: portrait) {
+  .registration-promo {
+    top: 23.5vh !important;
+  }
+}
+
+@media (max-width: 390px) and (orientation: portrait) {
+  .registration-promo {
+    top: 23vh !important;
+  }
+}
+
+@media (max-width: 900px) and (orientation: landscape) {
+  .registration-promo {
+    top: 22vh !important;
+  }
+}
+
+@media (max-width: 900px) and (orientation: landscape) and (max-height: 700px) {
+  .registration-promo {
+    top: 21vh !important;
+  }
+}
+
+
+/* ============================================================
+   FINAL MICRO POSITION 2 — LOWER REGISTRATION OFFERS SLIGHTLY
+   Keep size and horizontal placement exactly as approved.
+   This only moves the artwork a tiny bit farther below the balloon.
+============================================================ */
+.registration-promo {
+  top: 24vh !important;
+}
+
+@media (min-width: 1200px) {
+  .registration-promo {
+    top: 24vh !important;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1199px) {
+  .registration-promo {
+    top: 25vh !important;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) and (orientation: portrait) {
+  .registration-promo {
+    top: 25vh !important;
+  }
+}
+
+@media (max-width: 600px) and (orientation: portrait) {
+  .registration-promo {
+    top: 24.5vh !important;
+  }
+}
+
+@media (max-width: 390px) and (orientation: portrait) {
+  .registration-promo {
+    top: 24vh !important;
+  }
+}
+
+@media (max-width: 900px) and (orientation: landscape) {
+  .registration-promo {
+    top: 23vh !important;
+  }
+}
+
+@media (max-width: 900px) and (orientation: landscape) and (max-height: 700px) {
+  .registration-promo {
+    top: 22vh !important;
+  }
+}
+
+/* ============================================================
+   FINAL POSITION FIX — REGISTRATION DOWN / CASTLE UP
+
+   Registration Offers: move a little further down so it clears
+   the balloon completely, while keeping its approved size and
+   horizontal position.
+
+   Castle: move the mobile castle back upward so there is still
+   a clean gap between the upper controls and the academy.
+============================================================ */
+
+/* Default / desktop — registration only moves slightly lower. */
+.registration-promo {
+  top: 26vh !important;
+}
+
+@media (min-width: 1200px) {
+  .registration-promo {
+    top: 26vh !important;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1199px) {
+  .registration-promo {
+    top: 27vh !important;
+  }
+}
+
+/* Tablet portrait */
+@media (min-width: 601px) and (max-width: 900px) and (orientation: portrait) {
+  .registration-promo {
+    top: 27vh !important;
+  }
+
+  .castle-world {
+    top: 27% !important;
+  }
+}
+
+/* Mobile portrait — registration sits clearly below the balloon,
+   while the castle is brought back up from the previous position. */
+@media (max-width: 600px) and (orientation: portrait) {
+  .registration-promo {
+    left: 34vw !important;
+    top: 27vh !important;
+    width: clamp(108px, 24vw, 132px) !important;
+    max-width: 132px !important;
+    z-index: 72 !important;
+  }
+
+  .castle-world {
+    top: 26.5% !important;
+  }
+}
+
+/* Very small portrait phones */
+@media (max-width: 390px) and (orientation: portrait) {
+  .registration-promo {
+    left: 33vw !important;
+    top: 27vh !important;
+    width: clamp(104px, 25vw, 122px) !important;
+    max-width: 122px !important;
+  }
+
+  .castle-world {
+    top: 27.5% !important;
+  }
+}
+
+/* Short portrait phones — keep the castle safely above the lower
+   learning-island zone while still leaving registration visible. */
+@media (max-width: 600px) and (orientation: portrait) and (max-height: 700px) {
+  .registration-promo {
+    top: 27vh !important;
+  }
+
+  .castle-world {
+    top: 25.5% !important;
+  }
+}
+
+/* Landscape phones / small tablets */
+@media (max-width: 900px) and (orientation: landscape) {
+  .registration-promo {
+    top: 24vh !important;
+  }
+
+  .castle-world {
+    top: 10% !important;
+  }
+}
+
+@media (max-width: 900px) and (orientation: landscape) and (max-height: 700px) {
+  .registration-promo {
+    top: 23vh !important;
+  }
+
+  .castle-world {
+    top: 9% !important;
+  }
+}
+
+/* ============================================================
+   FINAL POSITION TUNING — REGISTRATION FURTHER DOWN / CASTLE UP
+   Base: the 6,099-line approved stylesheet.
+   Only the portrait positioning is adjusted here.
+============================================================ */
+
+@media (max-width: 600px) and (orientation: portrait) {
+  /* Move registration farther below the balloon while keeping
+     its approved size and horizontal position. */
+  .registration-promo {
+    top: 32.5vh !important;
+  }
+
+  /* Bring the castle back upward so it does not sit too low. */
+  .castle-world {
+    top: 20.5% !important;
+  }
+}
+
+@media (max-width: 390px) and (orientation: portrait) {
+  .registration-promo {
+    top: 33vh !important;
+  }
+
+  .castle-world {
+    top: 21% !important;
+  }
+}
+
+@media (max-width: 600px) and (orientation: portrait) and (max-height: 700px) {
+  .registration-promo {
+    top: 32.5vh !important;
+  }
+
+  .castle-world {
+    top: 20% !important;
+  }
+}
