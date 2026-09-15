@@ -6943,3 +6943,273 @@ body {
     max-width: 88px !important;
   }
 }
+
+/* ============================================================
+   FINAL MOBILE PORTRAIT COMPOSITION FIX
+   Desktop / laptop styles are intentionally untouched.
+   These rules apply only to portrait phones.
+   ============================================================ */
+@media (max-width: 600px) and (orientation: portrait) {
+  /* Keep the upper controls clear of the castle. */
+  .left-info-image-button {
+    top: 17vh !important;
+    left: 4vw !important;
+    width: min(38vw, 168px) !important;
+    z-index: 115 !important;
+  }
+
+  .why-balloon {
+    left: 40% !important;
+    top: 3vh !important;
+    width: clamp(92px, 25vw, 122px) !important;
+    z-index: 100 !important;
+  }
+
+  .contact-airship {
+    top: 3vh !important;
+    right: 1vw !important;
+    width: clamp(128px, 35vw, 176px) !important;
+    z-index: 105 !important;
+  }
+
+  /* Price stays under Contact Us, on the right, without covering
+     the castle Explore ACE indicator. */
+  .price-scroll {
+    top: 38vh !important;
+    right: 3vw !important;
+    left: auto !important;
+    width: clamp(108px, 30vw, 136px) !important;
+    max-width: 136px !important;
+    z-index: 125 !important;
+  }
+
+  /* Registration Offers follows the price scroll on mobile only. */
+  .registration-promo {
+    top: 54vh !important;
+    right: 3vw !important;
+    left: auto !important;
+    width: clamp(108px, 30vw, 136px) !important;
+    max-width: 136px !important;
+    z-index: 130 !important;
+  }
+
+  .registration-promo .click-hint {
+    bottom: -14px !important;
+    font-size: clamp(0.28rem, 1vw, 0.36rem) !important;
+  }
+
+  /* Give the castle a clean central zone. */
+  .castle-world {
+    top: 34vh !important;
+    width: min(78vw, 325px) !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    z-index: 30 !important;
+  }
+
+  .castle-image {
+    transform: scale(1) !important;
+    transform-origin: center center !important;
+  }
+
+  .castle-world:hover .castle-image {
+    transform: scale(1) !important;
+  }
+
+  /* Smaller castle click indicator — only the indicator is reduced. */
+  .hint-castle {
+    bottom: 0 !important;
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+    font-size: 0.42rem !important;
+    line-height: 1 !important;
+    padding: 3px 7px !important;
+    min-height: 0 !important;
+    width: max-content !important;
+    max-width: 92px !important;
+    gap: 3px !important;
+    white-space: nowrap !important;
+    z-index: 200 !important;
+  }
+
+  .hint-castle svg {
+    width: 8px !important;
+    height: 8px !important;
+  }
+
+  /* ==========================================================
+     SUBJECT ISLANDS
+     Two compact rows, all seven equal-sized, entirely above
+     the footer.  Row 1 = 4, Row 2 = 3 centered.
+     ========================================================== */
+  .subject-world {
+    position: absolute !important;
+    left: 3vw !important;
+    right: 3vw !important;
+    top: 67vh !important;
+    bottom: auto !important;
+    width: auto !important;
+    height: 20vh !important;
+    min-height: 0 !important;
+    max-height: none !important;
+
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    grid-template-rows: repeat(2, minmax(0, 1fr)) !important;
+    column-gap: 0 !important;
+    row-gap: 0.5vh !important;
+    align-items: center !important;
+    justify-items: center !important;
+
+    z-index: 70 !important;
+    pointer-events: none !important;
+  }
+
+  .subject-island,
+  .subject-7 {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    grid-column: auto !important;
+    grid-row: auto !important;
+
+    width: min(20vw, 88px) !important;
+    max-width: 88px !important;
+    height: 100% !important;
+    min-width: 0 !important;
+    aspect-ratio: 0.73 / 1 !important;
+    justify-self: center !important;
+    align-self: center !important;
+  }
+
+  .subject-1 { grid-column: 1 !important; grid-row: 1 !important; }
+  .subject-2 { grid-column: 2 !important; grid-row: 1 !important; }
+  .subject-3 { grid-column: 3 !important; grid-row: 1 !important; }
+  .subject-4 { grid-column: 4 !important; grid-row: 1 !important; }
+
+  .subject-5 { grid-column: 1 !important; grid-row: 2 !important; }
+  .subject-6 { grid-column: 2 !important; grid-row: 2 !important; }
+  .subject-7 {
+    grid-column: 3 !important;
+    grid-row: 2 !important;
+  }
+
+  .island-image-button {
+    width: 100% !important;
+    height: 78% !important;
+    left: 0 !important;
+    top: 0 !important;
+    pointer-events: auto !important;
+  }
+
+  .island-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+  }
+
+  .hint-island {
+    bottom: -2px !important;
+    font-size: 0.34rem !important;
+    line-height: 1 !important;
+    padding: 3px 5px !important;
+    gap: 2px !important;
+    white-space: nowrap !important;
+    z-index: 200 !important;
+  }
+
+  .hint-island svg {
+    width: 7px !important;
+    height: 7px !important;
+  }
+
+  /* Footer remains below the complete two-row island area. */
+  .feature-strip {
+    left: 2vw !important;
+    right: 2vw !important;
+    bottom: max(1.5vh, env(safe-area-inset-bottom)) !important;
+    height: 4.8vh !important;
+    min-height: 30px !important;
+    z-index: 180 !important;
+  }
+
+  .enroll-book {
+    width: clamp(76px, 21vw, 102px) !important;
+    right: 1vw !important;
+    bottom: max(6vh, calc(env(safe-area-inset-bottom) + 4vh)) !important;
+    z-index: 185 !important;
+  }
+
+  .bottom-slogan {
+    display: none !important;
+  }
+}
+
+/* Extra-small portrait phones: preserve the same composition, only
+   reduce dimensions enough to keep everything above the footer. */
+@media (max-width: 390px) and (orientation: portrait) {
+  .left-info-image-button {
+    top: 17vh !important;
+    left: 4vw !important;
+    width: min(39vw, 160px) !important;
+  }
+
+  .price-scroll {
+    top: 38vh !important;
+    right: 2vw !important;
+    width: min(30vw, 128px) !important;
+  }
+
+  .registration-promo {
+    top: 54vh !important;
+    right: 2vw !important;
+    width: min(30vw, 128px) !important;
+  }
+
+  .castle-world {
+    top: 34vh !important;
+    width: min(79vw, 315px) !important;
+  }
+
+  .subject-world {
+    top: 66.5vh !important;
+    height: 19.5vh !important;
+  }
+
+  .subject-island,
+  .subject-7 {
+    width: min(20vw, 82px) !important;
+    max-width: 82px !important;
+  }
+}
+
+/* Short portrait phones: keep the complete island grid inside the
+   visible content area instead of allowing row two to fall below it. */
+@media (max-width: 600px) and (orientation: portrait) and (max-height: 700px) {
+  .price-scroll {
+    top: 35vh !important;
+  }
+
+  .registration-promo {
+    top: 49vh !important;
+  }
+
+  .castle-world {
+    top: 30vh !important;
+    width: min(77vw, 305px) !important;
+  }
+
+  .subject-world {
+    top: 62vh !important;
+    height: 23vh !important;
+  }
+
+  .subject-island,
+  .subject-7 {
+    width: min(20vw, 78px) !important;
+    max-width: 78px !important;
+  }
+}
