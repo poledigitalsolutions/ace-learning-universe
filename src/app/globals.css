@@ -7856,3 +7856,314 @@ body {
     transform-origin: top left;
   }
 }
+
+/* ============================================================
+   FAQ ROYAL MESSENGER — NEW ELEMENT ONLY
+   Uses the existing ACE navy / purple / gold visual language.
+============================================================ */
+.faq-messenger {
+  position: absolute !important;
+  z-index: 76 !important;
+  width: clamp(88px, 7.2vw, 128px) !important;
+  height: auto !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
+  outline: 0 !important;
+  background: transparent !important;
+  right: 16vw !important;
+  top: 55% !important;
+  overflow: visible !important;
+  will-change: transform !important;
+  transition: transform 0.3s ease, filter 0.3s ease !important;
+  animation: faqMessengerFloat 5.6s ease-in-out infinite !important;
+}
+
+.faq-messenger img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  max-width: none !important;
+  object-fit: contain !important;
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+.faq-messenger:hover {
+  animation-play-state: paused !important;
+  transform: translateY(-7px) scale(1.03) !important;
+  filter: drop-shadow(0 0 15px rgba(255, 220, 110, 0.55)) !important;
+}
+
+.faq-messenger .click-hint {
+  left: 50% !important;
+  right: auto !important;
+  top: auto !important;
+  bottom: -18px !important;
+  transform: translateX(-50%) !important;
+  white-space: nowrap !important;
+  z-index: 120 !important;
+}
+
+.hint-faq {
+  left: 50%;
+  bottom: -18px;
+  transform: translateX(-50%);
+}
+
+@keyframes faqMessengerFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Smaller laptops: keep the messenger in the open space beside
+   the castle and above the subject-island row. */
+@media (min-width: 901px) and (max-width: 1199px) {
+  .faq-messenger {
+    right: 13vw !important;
+    top: 54% !important;
+    width: clamp(78px, 8vw, 108px) !important;
+  }
+}
+
+/* Portrait phones: place the FAQ creature below the existing
+   left information panel, kept on the far-left side so it never
+   sits over the central castle artwork. */
+@media (max-width: 600px) and (orientation: portrait) {
+  .faq-messenger {
+    left: 3.5vw !important;
+    right: auto !important;
+    top: 48vh !important;
+    width: clamp(72px, 23vw, 92px) !important;
+    max-width: 92px !important;
+    z-index: 76 !important;
+  }
+
+  .faq-messenger .click-hint {
+    bottom: -13px !important;
+    font-size: clamp(0.26rem, 1.05vw, 0.36rem) !important;
+    padding: 3px 5px !important;
+  }
+}
+
+@media (max-width: 390px) and (orientation: portrait) {
+  .faq-messenger {
+    left: 3vw !important;
+    top: 48vh !important;
+    width: clamp(68px, 23vw, 84px) !important;
+    max-width: 84px !important;
+  }
+}
+
+@media (max-width: 600px) and (orientation: portrait) and (max-height: 700px) {
+  .faq-messenger {
+    top: 47vh !important;
+  }
+}
+
+/* Touch devices: keep the natural floating animation and avoid
+   a sticky hover state. */
+@media (hover: none) and (pointer: coarse) {
+  .faq-messenger:hover {
+    animation-play-state: running !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}
+
+/* ============================================================
+   FAQ MODAL — SAME PREMIUM POP-UP LANGUAGE AS THE EXISTING MODALS
+============================================================ */
+.faq-modal {
+  max-height: none;
+}
+
+.faq-intro {
+  margin-bottom: 20px !important;
+}
+
+.faq-list {
+  display: grid;
+  gap: 9px;
+  margin-top: 18px;
+}
+
+.faq-item {
+  border: 1px solid rgba(220, 179, 80, 0.48);
+  border-radius: 12px;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(8, 39, 74, 0.86),
+      rgba(3, 20, 45, 0.94)
+    );
+  box-shadow: inset 0 0 18px rgba(79, 171, 235, 0.05);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.faq-item.is-open {
+  border-color: rgba(238, 194, 83, 0.82);
+  box-shadow:
+    0 0 18px rgba(231, 185, 87, 0.08),
+    inset 0 0 18px rgba(79, 171, 235, 0.06);
+}
+
+.faq-question {
+  width: 100%;
+  min-height: 54px;
+  display: grid;
+  grid-template-columns: 23px 1fr 20px;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  text-align: left;
+  background: transparent;
+  color: #fff5d1;
+}
+
+.faq-question:hover {
+  background: rgba(31, 81, 124, 0.2);
+}
+
+.faq-question-point {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  color: #f2ca6a;
+}
+
+.faq-question-point svg {
+  width: 15px;
+  height: 15px;
+}
+
+.faq-question-text {
+  font-family: var(--serif);
+  font-size: 0.84rem;
+  line-height: 1.35;
+  font-weight: 700;
+  color: #fff7dc;
+}
+
+.faq-chevron {
+  width: 17px;
+  height: 17px;
+  color: #e9c46b;
+  transition: transform 0.2s ease;
+}
+
+.faq-item.is-open .faq-chevron {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  padding: 0 17px 15px 47px;
+}
+
+.faq-answer p {
+  margin: 0 !important;
+  padding-top: 12px;
+  border-top: 1px solid rgba(218, 176, 75, 0.25);
+  color: #e9eef5;
+  font-size: 0.84rem;
+  line-height: 1.55;
+}
+
+.faq-contact-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 22px;
+  padding: 16px 18px;
+  border: 1px solid rgba(220, 179, 80, 0.5);
+  border-radius: 14px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(17, 59, 95, 0.72),
+      rgba(4, 24, 51, 0.88)
+    );
+}
+
+.faq-contact-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.faq-contact-copy strong {
+  color: #ffe59a;
+  font-family: var(--serif);
+  font-size: 0.9rem;
+}
+
+.faq-contact-copy span {
+  color: #e8edf4;
+  font-size: 0.76rem;
+  line-height: 1.45;
+}
+
+.faq-contact-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.faq-contact-actions .primary-gold-button,
+.faq-contact-actions .secondary-button {
+  min-height: 38px;
+  padding: 0 14px;
+  font-size: 0.63rem;
+}
+
+.faq-contact-actions svg {
+  width: 14px;
+  height: 14px;
+}
+
+@media (max-width: 600px) {
+  .faq-question {
+    grid-template-columns: 20px 1fr 18px;
+    min-height: 50px;
+    gap: 8px;
+    padding: 9px 11px;
+  }
+
+  .faq-question-text {
+    font-size: 0.76rem;
+  }
+
+  .faq-answer {
+    padding: 0 13px 13px 39px;
+  }
+
+  .faq-answer p {
+    font-size: 0.75rem;
+  }
+
+  .faq-contact-box {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .faq-contact-actions {
+    width: 100%;
+  }
+
+  .faq-contact-actions .primary-gold-button,
+  .faq-contact-actions .secondary-button {
+    flex: 1;
+  }
+}

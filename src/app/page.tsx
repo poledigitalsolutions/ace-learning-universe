@@ -18,6 +18,7 @@ import {
   ArrowRight,
   Target,
   MousePointer2,
+  ChevronDown,
 } from "lucide-react";
 
 type Subject = {
@@ -162,6 +163,7 @@ type ModalType =
   | "pricing"
   | "enroll"
   | "registration"
+  | "faq"
   | null;
 
 export default function Home() {
@@ -170,6 +172,9 @@ export default function Home() {
 
   const [modal, setModal] =
     useState<ModalType>(null);
+
+  const [activeFaq, setActiveFaq] =
+    useState<number | null>(null);
 
   const openSubject = (subject: Subject) => {
     setActiveSubject(subject);
@@ -365,6 +370,27 @@ export default function Home() {
       </button>
 
       {/* =========================================================
+          FAQ ROYAL MESSENGER
+      ========================================================= */}
+
+      <button
+        className="faq-messenger interactive-object"
+        onClick={() => setModal("faq")}
+        aria-label="Frequently Asked Questions"
+        type="button"
+      >
+        <img
+          src="/images/decorations/faq-royal-messenger.webp"
+          alt="FAQ royal messenger"
+        />
+
+        <ClickHint
+          text="CLICK FOR FAQ'S"
+          position="hint-faq"
+        />
+      </button>
+
+      {/* =========================================================
           CENTRAL CASTLE
       ========================================================= */}
 
@@ -525,6 +551,14 @@ export default function Home() {
 
           {modal === "registration" && (
             <RegistrationModal onClose={closeModal} />
+          )}
+
+          {modal === "faq" && (
+            <FAQModal
+              onClose={closeModal}
+              activeFaq={activeFaq}
+              setActiveFaq={setActiveFaq}
+            />
           )}
         </ModalOverlay>
       )}
@@ -1218,6 +1252,154 @@ function EnrollModal({
           WHATSAPP
         </a>
 
+        <button
+          className="secondary-button"
+          onClick={onClose}
+          type="button"
+        >
+          CLOSE
+        </button>
+      </div>
+    </div>
+  );
+}
+
+/* =============================================================
+   FAQ MODAL
+============================================================= */
+
+const faqItems = [
+  {
+    question: "What age groups does ACE Academy teach?",
+    answer:
+      "ACE Academy provides online tutoring for young learners aged 5 – 16 years.",
+  },
+  {
+    question: "Which curriculum do you follow?",
+    answer:
+      "Lessons are aligned with the UK Curriculum, supporting learners from Key Stage 1 through Key Stage 4.",
+  },
+  {
+    question: "Are lessons available every day of the week?",
+    answer:
+      "Yes. ACE offers flexible scheduling across all days of the week to fit around your child's routine.",
+  },
+  {
+    question: "What subjects can my child study?",
+    answer:
+      "ACE offers Mathematics, Science, English, Literature, Speaking, Exam Preparation and Mentoring.",
+  },
+  {
+    question: "Are the lessons online?",
+    answer:
+      "Yes. ACE provides online tutoring designed to let learners study comfortably from home.",
+  },
+  {
+    question: "How much do lessons cost?",
+    answer:
+      "Lessons start from £15 per hour. Contact ACE for further details and availability.",
+  },
+  {
+    question: "How can I enrol my child?",
+    answer:
+      "You can contact ACE by email or WhatsApp to discuss your child's learning needs, availability and next steps.",
+  },
+];
+
+function FAQModal({
+  onClose,
+  activeFaq,
+  setActiveFaq,
+}: {
+  onClose: () => void;
+  activeFaq: number | null;
+  setActiveFaq: (index: number | null) => void;
+}) {
+  return (
+    <div className="modal-content standard-modal faq-modal">
+      <span className="modal-eyebrow">
+        ACE LEARNING UNIVERSE
+      </span>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <div className="modal-gold-line" />
+
+      <p className="faq-intro">
+        Find answers to some of the most common questions about learning at ACE Academy.
+      </p>
+
+      <div className="faq-list">
+        {faqItems.map((item, index) => {
+          const isOpen = activeFaq === index;
+
+          return (
+            <div
+              className={`faq-item ${isOpen ? "is-open" : ""}`}
+              key={item.question}
+            >
+              <button
+                className="faq-question"
+                onClick={() =>
+                  setActiveFaq(isOpen ? null : index)
+                }
+                type="button"
+                aria-expanded={isOpen}
+              >
+                <span className="faq-question-point">
+                  <Sparkles />
+                </span>
+
+                <span className="faq-question-text">
+                  {item.question}
+                </span>
+
+                <ChevronDown
+                  className="faq-chevron"
+                  aria-hidden="true"
+                />
+              </button>
+
+              {isOpen && (
+                <div className="faq-answer">
+                  <p>{item.answer}</p>
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="faq-contact-box">
+        <div className="faq-contact-copy">
+          <strong>Still have a question?</strong>
+          <span>
+            Email us or message ACE on WhatsApp and we will be happy to help.
+          </span>
+        </div>
+
+        <div className="faq-contact-actions">
+          <a
+            href="mailto:achievechallengeexcel@gmail.com?subject=ACE%20FAQ%20Enquiry"
+            className="primary-gold-button"
+          >
+            <Mail />
+            EMAIL ACE
+          </a>
+
+          <a
+            href="https://wa.me/447831063801"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="secondary-button"
+          >
+            <MessageCircle />
+            WHATSAPP
+          </a>
+        </div>
+      </div>
+
+      <div className="modal-actions">
         <button
           className="secondary-button"
           onClick={onClose}
