@@ -8167,3 +8167,83 @@ body {
     flex: 1;
   }
 }
+
+/* ============================================================
+   FINAL FAQ MESSENGER POSITION FIX
+   ------------------------------------------------------------
+   Only the FAQ royal messenger is repositioned.
+   All other website elements remain unchanged.
+   ============================================================ */
+
+/* Laptop / desktop: move the messenger into the upper-right open sky,
+   above the subject islands so it never covers an island. */
+@media (min-width: 1200px) {
+  .faq-messenger {
+    right: 13vw !important;
+    left: auto !important;
+    top: 25vh !important;
+    width: clamp(88px, 7.2vw, 128px) !important;
+    max-width: 128px !important;
+    z-index: 120 !important;
+  }
+}
+
+/* Smaller laptops / landscape tablets: keep it in the upper-right area. */
+@media (min-width: 901px) and (max-width: 1199px) {
+  .faq-messenger {
+    right: 12vw !important;
+    left: auto !important;
+    top: 24vh !important;
+    width: clamp(78px, 8vw, 108px) !important;
+    max-width: 108px !important;
+    z-index: 120 !important;
+  }
+}
+
+/* Mobile portrait: move the messenger into the upper-left sky,
+   below the logo but above the information panel and castle. */
+@media (max-width: 600px) and (orientation: portrait) {
+  .faq-messenger {
+    left: 4vw !important;
+    right: auto !important;
+    top: 15.5vh !important;
+    width: clamp(72px, 23vw, 92px) !important;
+    max-width: 92px !important;
+    z-index: 120 !important;
+  }
+
+  .faq-messenger .click-hint {
+    bottom: -13px !important;
+    font-size: clamp(0.26rem, 1.05vw, 0.36rem) !important;
+    padding: 3px 5px !important;
+  }
+}
+
+/* Very small portrait phones. */
+@media (max-width: 390px) and (orientation: portrait) {
+  .faq-messenger {
+    left: 3.5vw !important;
+    top: 15.5vh !important;
+    width: clamp(68px, 23vw, 84px) !important;
+    max-width: 84px !important;
+  }
+}
+
+/* Landscape phones / small tablets: keep it in the upper-left/centre
+   sky rather than letting it fall into the subject row. */
+@media (max-width: 900px) and (orientation: landscape) {
+  .faq-messenger {
+    left: 18vw !important;
+    right: auto !important;
+    top: 16vh !important;
+    width: clamp(72px, 9vw, 105px) !important;
+    max-width: 105px !important;
+    z-index: 120 !important;
+  }
+}
+
+@media (max-width: 900px) and (orientation: landscape) and (max-height: 700px) {
+  .faq-messenger {
+    top: 14vh !important;
+  }
+}
