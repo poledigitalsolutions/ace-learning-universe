@@ -8328,3 +8328,126 @@ body {
     top: 16vh !important;
   }
 }
+
+
+/* ============================================================
+   FINAL iPAD / TABLET LAYOUT
+   ------------------------------------------------------------
+   Applies only from 601px to 1199px.
+   Mobile portrait is NOT changed.
+   ============================================================ */
+
+@media (min-width: 601px) and (max-width: 1199px) {
+
+  /* Registration offers:
+     Keep it in the open space on the LEFT, below the castle. */
+  .registration-promo {
+    left: 5vw !important;
+    right: auto !important;
+    top: 56vh !important;
+    width: clamp(95px, 11vw, 125px) !important;
+    max-width: 125px !important;
+    z-index: 83 !important;
+  }
+
+  /* FAQ messenger:
+     Move it a little further DOWN so it sits below the pricing scroll. */
+  .faq-messenger {
+    right: 5vw !important;
+    left: auto !important;
+    top: 43vh !important;
+    width: clamp(82px, 9vw, 105px) !important;
+    max-width: 105px !important;
+    z-index: 120 !important;
+  }
+
+  /* Subject islands:
+     Move the two-row group slightly DOWN and reduce the
+     vertical gap between the rows. */
+  .subject-world {
+    left: 2vw !important;
+    right: 2vw !important;
+    bottom: 0 !important;
+    height: 38% !important;
+
+    display: grid !important;
+    grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+    grid-template-rows: repeat(2, minmax(0, 1fr)) !important;
+    align-items: center !important;
+    justify-items: center !important;
+    column-gap: 0 !important;
+    row-gap: 0 !important;
+  }
+
+  .subject-island {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+
+    width: clamp(100px, 11vw, 135px) !important;
+    height: auto !important;
+    aspect-ratio: 0.73 / 1 !important;
+  }
+
+  /* First row: Mathematics, Science, English, Literature */
+  .subject-1 {
+    grid-column: 1 / span 2 !important;
+    grid-row: 1 !important;
+  }
+
+  .subject-2 {
+    grid-column: 4 / span 2 !important;
+    grid-row: 1 !important;
+  }
+
+  .subject-3 {
+    grid-column: 7 / span 2 !important;
+    grid-row: 1 !important;
+  }
+
+  .subject-4 {
+    grid-column: 10 / span 2 !important;
+    grid-row: 1 !important;
+  }
+
+  /* Second row: Speaking, Exam Preparation, Mentoring */
+  .subject-5 {
+    grid-column: 2 / span 2 !important;
+    grid-row: 2 !important;
+  }
+
+  .subject-6 {
+    grid-column: 5 / span 2 !important;
+    grid-row: 2 !important;
+  }
+
+  .subject-7 {
+    grid-column: 8 / span 2 !important;
+    grid-row: 2 !important;
+  }
+
+  /* Bring ONLY the second row upward.
+     The first row remains exactly where it is. */
+  .subject-5,
+  .subject-6,
+  .subject-7 {
+    transform: translateY(-5vh) !important;
+  }
+
+  /* Make the Enroll Today book larger on iPad/tablet only. */
+  .enroll-book {
+    width: clamp(135px, 14vw, 175px) !important;
+  }
+}
+
+/* Laptop / desktop only:
+   keep the same horizontal messenger position but move it
+   just a little lower, as requested. */
+@media (min-width: 1200px) {
+  .faq-messenger {
+    top: 36vh !important;
+  }
+}
+
