@@ -6599,3 +6599,347 @@ body {
   }
 }
 
+
+/* ============================================================
+   FINAL USER REQUEST — DESKTOP REGISTRATION + MOBILE RECOMPOSITION
+   These rules intentionally come last so they override the earlier
+   accumulated responsive positioning rules without changing any
+   content, images, text, or interactions.
+============================================================ */
+
+/* ------------------------------------------------------------
+   LAPTOP / DESKTOP
+   Registration Offers moves into the open gap between the left
+   information panel and the castle, farther below the balloon.
+------------------------------------------------------------ */
+@media (min-width: 901px) {
+  .registration-promo {
+    position: fixed !important;
+    left: 22.5vw !important;
+    top: 37vh !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: clamp(125px, 10vw, 175px) !important;
+    max-width: 175px !important;
+    z-index: 140 !important;
+  }
+
+  .registration-promo .click-hint {
+    bottom: -22px !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .registration-promo {
+    left: 23vw !important;
+    top: 36vh !important;
+    width: clamp(135px, 10vw, 180px) !important;
+    max-width: 180px !important;
+  }
+}
+
+/* Short laptop screens: keep the same horizontal relationship but
+   avoid pushing the registration artwork too far down. */
+@media (min-width: 901px) and (max-height: 800px) {
+  .registration-promo {
+    top: 34vh !important;
+  }
+}
+
+/* ------------------------------------------------------------
+   MOBILE PORTRAIT
+   Use a genuine two-row island layout below the castle. The upper
+   controls get their own zones so nothing sits over the academy.
+------------------------------------------------------------ */
+@media (max-width: 600px) and (orientation: portrait) {
+  .universe {
+    width: 100vw !important;
+    height: 100dvh !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+  }
+
+  /* Keep the information panel confined to the upper-left column. */
+  .brand-area {
+    left: 3vw !important;
+    top: max(1.2vh, env(safe-area-inset-top)) !important;
+    width: 41vw !important;
+    z-index: 120 !important;
+  }
+
+  .logo-button {
+    width: clamp(82px, 25vw, 102px) !important;
+    height: auto !important;
+  }
+
+  .left-info-image-button {
+    width: min(39vw, 172px) !important;
+    max-width: 172px !important;
+    margin-top: 0.8vh !important;
+  }
+
+  /* Registration stays completely outside the castle's visual area,
+     in the left-side open space below the information panel. */
+  .registration-promo {
+    position: fixed !important;
+    left: 1.5vw !important;
+    top: 55vh !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: clamp(105px, 29vw, 125px) !important;
+    max-width: 125px !important;
+    z-index: 145 !important;
+  }
+
+  .registration-promo img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+  }
+
+  .registration-promo .click-hint {
+    left: 50% !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: -16px !important;
+    transform: translateX(-50%) !important;
+    font-size: clamp(0.28rem, 1.05vw, 0.38rem) !important;
+    white-space: nowrap !important;
+  }
+
+  /* Balloon occupies the upper-middle zone. */
+  .why-balloon {
+    left: 39% !important;
+    top: 2.5vh !important;
+    width: clamp(92px, 25vw, 122px) !important;
+    max-width: 122px !important;
+    z-index: 100 !important;
+  }
+
+  /* Contact remains at the upper-right. */
+  .contact-airship {
+    top: 2.5vh !important;
+    right: 0.5vw !important;
+    width: clamp(125px, 34vw, 175px) !important;
+    max-width: 175px !important;
+    z-index: 105 !important;
+  }
+
+  /* Pricing is moved to the right-side open column and down enough
+     to clear the castle's Explore ACE indicator. */
+  .price-scroll {
+    top: 39vh !important;
+    left: auto !important;
+    right: 0.5vw !important;
+    width: clamp(105px, 29vw, 135px) !important;
+    max-width: 135px !important;
+    z-index: 100 !important;
+  }
+
+  /* Castle sits between the upper controls and the two-row subjects.
+     Its click indicator is given a clean area below the academy. */
+  .castle-world {
+    width: min(84vw, 350px) !important;
+    left: 50% !important;
+    top: 31vh !important;
+    transform: translateX(-50%) !important;
+    z-index: 25 !important;
+  }
+
+  .castle-button {
+    left: 7% !important;
+    right: 7% !important;
+    top: 2% !important;
+    bottom: 14% !important;
+  }
+
+  .castle-image {
+    transform: scale(1.06) !important;
+    transform-origin: center center !important;
+  }
+
+  .castle-world:hover .castle-image {
+    transform: scale(1.06) !important;
+  }
+
+  .hint-castle {
+    bottom: -1% !important;
+    z-index: 190 !important;
+    white-space: nowrap !important;
+  }
+
+  /* ----------------------------------------------------------
+     ISLANDS — TWO EQUAL ROWS
+     4 on row one + 3 on row two. Every island uses exactly the
+     same width and image sizing. The seventh island is centered.
+  ---------------------------------------------------------- */
+  .subject-world {
+    position: absolute !important;
+    left: 2vw !important;
+    right: 2vw !important;
+    top: 69vh !important;
+    bottom: auto !important;
+    width: auto !important;
+    height: 24vh !important;
+    min-height: 0 !important;
+    max-height: none !important;
+
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    grid-template-rows: repeat(2, 1fr) !important;
+    column-gap: 0.5vw !important;
+    row-gap: 0.5vh !important;
+    align-items: end !important;
+    justify-items: center !important;
+
+    z-index: 55 !important;
+    pointer-events: none !important;
+  }
+
+  .subject-island,
+  .subject-7 {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    grid-column: auto !important;
+    grid-row: auto !important;
+
+    width: min(23vw, 100px) !important;
+    height: 100% !important;
+    min-width: 0 !important;
+    max-width: 100px !important;
+    aspect-ratio: 0.73 / 1 !important;
+    justify-self: center !important;
+  }
+
+  /* Four islands on row one, three centered on row two. */
+  .subject-1 { grid-column: 1 !important; grid-row: 1 !important; }
+  .subject-2 { grid-column: 2 !important; grid-row: 1 !important; }
+  .subject-3 { grid-column: 3 !important; grid-row: 1 !important; }
+  .subject-4 { grid-column: 4 !important; grid-row: 1 !important; }
+  .subject-5 { grid-column: 1 !important; grid-row: 2 !important; }
+  .subject-6 { grid-column: 2 !important; grid-row: 2 !important; }
+  .subject-7 { grid-column: 3 !important; grid-row: 2 !important; }
+
+  .island-image-button {
+    width: 100% !important;
+    height: 76% !important;
+    left: 0 !important;
+    top: 0 !important;
+    pointer-events: auto !important;
+  }
+
+  .island-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+  }
+
+  .hint-island {
+    bottom: -4px !important;
+    font-size: clamp(0.28rem, 1.05vw, 0.38rem) !important;
+    padding: 3px 5px !important;
+    gap: 2px !important;
+    white-space: nowrap !important;
+    z-index: 190 !important;
+  }
+
+  .hint-island svg {
+    width: 8px !important;
+    height: 8px !important;
+  }
+
+  /* Keep the bottom feature bar clear of the islands. */
+  .feature-strip {
+    left: 2vw !important;
+    right: 2vw !important;
+    bottom: max(1.5vh, env(safe-area-inset-bottom)) !important;
+    height: 4.8vh !important;
+    min-height: 30px !important;
+    z-index: 160 !important;
+  }
+
+  .enroll-book {
+    width: clamp(76px, 21vw, 102px) !important;
+    right: 1vw !important;
+    bottom: max(6vh, calc(env(safe-area-inset-bottom) + 4vh)) !important;
+    z-index: 165 !important;
+  }
+
+  .bottom-slogan {
+    display: none !important;
+  }
+}
+
+/* ------------------------------------------------------------
+   VERY SMALL PHONES
+------------------------------------------------------------ */
+@media (max-width: 390px) and (orientation: portrait) {
+  .brand-area {
+    width: 41vw !important;
+  }
+
+  .left-info-image-button {
+    width: min(39vw, 165px) !important;
+  }
+
+  .registration-promo {
+    left: 1vw !important;
+    top: 55.5vh !important;
+    width: clamp(100px, 29vw, 120px) !important;
+    max-width: 120px !important;
+  }
+
+  .price-scroll {
+    top: 39.5vh !important;
+    width: clamp(100px, 29vw, 130px) !important;
+    max-width: 130px !important;
+  }
+
+  .castle-world {
+    width: min(85vw, 340px) !important;
+    top: 31.5vh !important;
+  }
+
+  .subject-world {
+    top: 69.5vh !important;
+    height: 23.5vh !important;
+  }
+
+  .subject-island,
+  .subject-7 {
+    width: min(23vw, 94px) !important;
+    max-width: 94px !important;
+  }
+}
+
+/* ------------------------------------------------------------
+   SHORT PORTRAIT PHONES
+------------------------------------------------------------ */
+@media (max-width: 600px) and (orientation: portrait) and (max-height: 700px) {
+  .registration-promo {
+    top: 51vh !important;
+  }
+
+  .price-scroll {
+    top: 36vh !important;
+  }
+
+  .castle-world {
+    top: 28vh !important;
+    width: min(84vw, 330px) !important;
+  }
+
+  .subject-world {
+    top: 64vh !important;
+    height: 27vh !important;
+  }
+
+  .subject-island,
+  .subject-7 {
+    width: min(23vw, 88px) !important;
+    max-width: 88px !important;
+  }
+}
