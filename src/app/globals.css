@@ -7656,3 +7656,77 @@ body {
     left: 0 !important;
   }
 }
+
+/* ============================================================
+   FINAL EDGE CLEANUP + MOBILE INFO POSITION
+   Desktop composition is preserved; only the decorative layer
+   rendering is softened and the phone info panel is detached
+   from the brand container so its position is reliable.
+============================================================ */
+
+/* Remove hard rectangular edges from the environment/decorative
+   image layers without removing the artwork itself. */
+.background-cloud {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(0,0,0,0.15) 5%,
+    #000 14%,
+    #000 86%,
+    rgba(0,0,0,0.15) 95%,
+    transparent 100%
+  ) !important;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(0,0,0,0.15) 5%,
+    #000 14%,
+    #000 86%,
+    rgba(0,0,0,0.15) 95%,
+    transparent 100%
+  ) !important;
+}
+
+.distant-worlds,
+.mist-layer,
+.sparkles-layer,
+.particles-layer,
+.birds-layer {
+  -webkit-mask-image: radial-gradient(
+    ellipse at center,
+    #000 52%,
+    rgba(0,0,0,0.9) 68%,
+    rgba(0,0,0,0.35) 84%,
+    transparent 100%
+  ) !important;
+  mask-image: radial-gradient(
+    ellipse at center,
+    #000 52%,
+    rgba(0,0,0,0.9) 68%,
+    rgba(0,0,0,0.35) 84%,
+    transparent 100%
+  ) !important;
+}
+
+@media (max-width: 600px) and (orientation: portrait) {
+  /* Put the information panel immediately below the logo.
+     Fixed positioning avoids percentage-top calculations against
+     the auto-height brand container. */
+  .left-info-image-button {
+    position: fixed !important;
+    top: 15.2vh !important;
+    left: 4vw !important;
+    width: clamp(150px, 39vw, 205px) !important;
+    max-width: 205px !important;
+    margin: 0 !important;
+    z-index: 82 !important;
+  }
+}
+
+@media (max-width: 390px) and (orientation: portrait) {
+  .left-info-image-button {
+    top: 14.8vh !important;
+    left: 4vw !important;
+    width: clamp(142px, 40vw, 178px) !important;
+  }
+}
