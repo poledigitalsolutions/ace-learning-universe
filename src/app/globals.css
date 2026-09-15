@@ -8247,3 +8247,81 @@ body {
     top: 14vh !important;
   }
 }
+
+/* ============================================================
+   FINAL FAQ MESSENGER POSITION — LATEST REQUEST
+   Only the FAQ messenger position is adjusted.
+   All other elements and existing styles remain unchanged.
+   ============================================================ */
+
+/* Desktop / laptop: move the messenger slightly left and down
+   into the open space between the castle and pricing scroll. */
+@media (min-width: 1200px) {
+  .faq-messenger {
+    right: 18vw !important;
+    left: auto !important;
+    top: 31vh !important;
+    width: clamp(88px, 7.2vw, 128px) !important;
+    max-width: 128px !important;
+    z-index: 120 !important;
+  }
+}
+
+/* Smaller desktop / landscape tablet: same open-space treatment. */
+@media (min-width: 901px) and (max-width: 1199px) {
+  .faq-messenger {
+    right: 17vw !important;
+    left: auto !important;
+    top: 30vh !important;
+    width: clamp(78px, 8vw, 108px) !important;
+    max-width: 108px !important;
+    z-index: 120 !important;
+  }
+}
+
+/* Mobile portrait: bring the messenger down from the top area,
+   keeping it on the left side and clear of the castle. */
+@media (max-width: 600px) and (orientation: portrait) {
+  .faq-messenger {
+    left: 4vw !important;
+    right: auto !important;
+    top: 21vh !important;
+    width: clamp(68px, 20vw, 82px) !important;
+    max-width: 82px !important;
+    z-index: 120 !important;
+  }
+
+  .faq-messenger .click-hint {
+    bottom: -13px !important;
+    font-size: clamp(0.26rem, 1.05vw, 0.36rem) !important;
+    padding: 3px 5px !important;
+  }
+}
+
+/* Very small portrait phones. */
+@media (max-width: 390px) and (orientation: portrait) {
+  .faq-messenger {
+    left: 3.5vw !important;
+    top: 21vh !important;
+    width: clamp(64px, 20vw, 76px) !important;
+    max-width: 76px !important;
+  }
+}
+
+/* Landscape phones / small tablets. */
+@media (max-width: 900px) and (orientation: landscape) {
+  .faq-messenger {
+    left: 18vw !important;
+    right: auto !important;
+    top: 18vh !important;
+    width: clamp(72px, 9vw, 105px) !important;
+    max-width: 105px !important;
+    z-index: 120 !important;
+  }
+}
+
+@media (max-width: 900px) and (orientation: landscape) and (max-height: 700px) {
+  .faq-messenger {
+    top: 16vh !important;
+  }
+}
