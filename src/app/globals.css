@@ -8254,38 +8254,40 @@ body {
    All other elements and existing styles remain unchanged.
    ============================================================ */
 
-/* Desktop / laptop: move the messenger slightly left and down
-   into the open space between the castle and pricing scroll. */
+/* Desktop / laptop: keep the exact same horizontal position, but move
+   the messenger slightly lower into the open space between the castle
+   and pricing scroll without reaching the subject islands. */
 @media (min-width: 1200px) {
   .faq-messenger {
     right: 18vw !important;
     left: auto !important;
-    top: 31vh !important;
+    top: 34vh !important;
     width: clamp(88px, 7.2vw, 128px) !important;
     max-width: 128px !important;
     z-index: 120 !important;
   }
 }
 
-/* Smaller desktop / landscape tablet: same open-space treatment. */
+/* Smaller desktop / landscape tablet: same treatment. */
 @media (min-width: 901px) and (max-width: 1199px) {
   .faq-messenger {
     right: 17vw !important;
     left: auto !important;
-    top: 30vh !important;
+    top: 33vh !important;
     width: clamp(78px, 8vw, 108px) !important;
     max-width: 108px !important;
     z-index: 120 !important;
   }
 }
 
-/* Mobile portrait: bring the messenger down from the top area,
-   keeping it on the left side and clear of the castle. */
+/* Mobile portrait: move the messenger completely below the left
+   information panel. It remains on the left so it stays clear of the
+   castle, while preserving the existing size and click indicator. */
 @media (max-width: 600px) and (orientation: portrait) {
   .faq-messenger {
     left: 4vw !important;
     right: auto !important;
-    top: 21vh !important;
+    top: 47vh !important;
     width: clamp(68px, 20vw, 82px) !important;
     max-width: 82px !important;
     z-index: 120 !important;
@@ -8298,11 +8300,12 @@ body {
   }
 }
 
-/* Very small portrait phones. */
+/* Very small portrait phones: keep the messenger below the information
+   panel and safely to the left of the castle. */
 @media (max-width: 390px) and (orientation: portrait) {
   .faq-messenger {
     left: 3.5vw !important;
-    top: 21vh !important;
+    top: 47vh !important;
     width: clamp(64px, 20vw, 76px) !important;
     max-width: 76px !important;
   }
