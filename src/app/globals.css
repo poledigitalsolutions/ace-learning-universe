@@ -7213,3 +7213,300 @@ body {
     max-width: 78px !important;
   }
 }
+
+/* ============================================================
+   MOBILE PORTRAIT — FINAL COMPOSITION FIX
+   Desktop/laptop layout is intentionally untouched.
+   These rules apply only to portrait phones.
+============================================================ */
+
+@media (max-width: 600px) and (orientation: portrait) {
+  /* ----------------------------------------------------------
+     LEFT INFORMATION PANEL
+     Keep it in the upper-left open area and completely clear
+     of the castle.
+  ---------------------------------------------------------- */
+  .left-info-image-button {
+    position: absolute !important;
+    top: 24.5vh !important;
+    left: 4vw !important;
+    width: min(37vw, 190px) !important;
+    z-index: 82 !important;
+  }
+
+  /* ----------------------------------------------------------
+     CONTACT + PRICE + REGISTRATION
+     Contact remains at the top-right.
+     Registration occupies the open area beneath Contact and
+     above Pricing, without touching the castle.
+  ---------------------------------------------------------- */
+  .contact-airship {
+    top: 2.2vh !important;
+    right: 1.5vw !important;
+    width: min(34vw, 250px) !important;
+    z-index: 95 !important;
+  }
+
+  .price-scroll {
+    top: 37.5vh !important;
+    right: 3vw !important;
+    width: min(29vw, 135px) !important;
+    z-index: 92 !important;
+  }
+
+  .registration-promo {
+    top: 25.5vh !important;
+    right: 4vw !important;
+    left: auto !important;
+    width: min(27vw, 128px) !important;
+    z-index: 91 !important;
+  }
+
+  /* Keep the registration hint immediately beneath its artwork. */
+  .registration-promo .click-hint {
+    bottom: -13px !important;
+    font-size: 0.31rem !important;
+    padding: 3px 5px !important;
+    white-space: nowrap !important;
+  }
+
+  /* ----------------------------------------------------------
+     CASTLE
+     Give the castle its own unobstructed central zone.
+  ---------------------------------------------------------- */
+  .castle-world {
+    top: 38vh !important;
+    left: 50% !important;
+    width: min(70vw, 285px) !important;
+    transform: translateX(-50%) !important;
+    z-index: 45 !important;
+    pointer-events: none !important;
+  }
+
+  .castle-button {
+    left: 7% !important;
+    right: 7% !important;
+    top: 1% !important;
+    bottom: 12% !important;
+    z-index: 46 !important;
+  }
+
+  .castle-image {
+    transform: scale(1.04) !important;
+    transform-origin: center center !important;
+  }
+
+  .castle-world:hover .castle-image {
+    transform: scale(1.04) !important;
+    filter: none !important;
+  }
+
+  /* The dark/oversized castle click area seen in the screenshot
+     is the hint. Make it a tiny island-style indicator directly
+     below the castle. */
+  .hint-castle {
+    left: 50% !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: -4px !important;
+    transform: translateX(-50%) !important;
+    width: max-content !important;
+    max-width: 88px !important;
+    min-height: 0 !important;
+    padding: 3px 6px !important;
+    margin: 0 !important;
+    border-radius: 999px !important;
+    font-size: 0.30rem !important;
+    line-height: 1 !important;
+    gap: 2px !important;
+    white-space: nowrap !important;
+    z-index: 140 !important;
+  }
+
+  .hint-castle svg {
+    width: 7px !important;
+    height: 7px !important;
+  }
+
+  /* ----------------------------------------------------------
+     SUBJECT ISLANDS
+     Keep the already-correct 4 + 3 arrangement, but move the
+     complete grid slightly down while leaving enough room above
+     the footer.
+  ---------------------------------------------------------- */
+  .subject-world {
+    top: 70vh !important;
+    bottom: auto !important;
+    left: 3vw !important;
+    right: 3vw !important;
+    width: auto !important;
+    height: 20vh !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    grid-template-rows: repeat(2, minmax(0, 1fr)) !important;
+    column-gap: 0 !important;
+    row-gap: 0.3vh !important;
+    z-index: 100 !important;
+  }
+
+  .subject-island,
+  .subject-7 {
+    width: min(19vw, 84px) !important;
+    max-width: 84px !important;
+    height: 100% !important;
+  }
+
+  .island-image-button {
+    width: 100% !important;
+    height: 78% !important;
+  }
+
+  .hint-island {
+    bottom: -1px !important;
+    font-size: 0.31rem !important;
+    padding: 3px 5px !important;
+    gap: 2px !important;
+    z-index: 150 !important;
+  }
+
+  .hint-island svg {
+    width: 7px !important;
+    height: 7px !important;
+  }
+
+  /* ----------------------------------------------------------
+     FOOTER / ENROLL
+     Keep the complete island grid above the footer and prevent
+     row two from being hidden underneath it.
+  ---------------------------------------------------------- */
+  .feature-strip {
+    left: 2vw !important;
+    right: 2vw !important;
+    bottom: max(1.5vh, env(safe-area-inset-bottom)) !important;
+    height: 4.8vh !important;
+    min-height: 30px !important;
+    z-index: 180 !important;
+  }
+
+  .enroll-book {
+    width: clamp(76px, 21vw, 102px) !important;
+    right: 1vw !important;
+    bottom: max(6vh, calc(env(safe-area-inset-bottom) + 4vh)) !important;
+    z-index: 185 !important;
+  }
+}
+
+/* Extra-small phones: same composition, with slightly smaller
+   objects so nothing can collide with the footer. */
+@media (max-width: 390px) and (orientation: portrait) {
+  .left-info-image-button {
+    top: 24vh !important;
+    left: 4vw !important;
+    width: min(38vw, 155px) !important;
+  }
+
+  .contact-airship {
+    width: min(35vw, 220px) !important;
+  }
+
+  .registration-promo {
+    top: 25vh !important;
+    right: 3vw !important;
+    width: min(28vw, 116px) !important;
+  }
+
+  .price-scroll {
+    top: 38vh !important;
+    right: 2vw !important;
+    width: min(30vw, 125px) !important;
+  }
+
+  .castle-world {
+    top: 39vh !important;
+    width: min(69vw, 270px) !important;
+  }
+
+  .hint-castle {
+    font-size: 0.28rem !important;
+    max-width: 82px !important;
+    padding: 3px 5px !important;
+  }
+
+  .subject-world {
+    top: 70.5vh !important;
+    height: 19vh !important;
+  }
+
+  .subject-island,
+  .subject-7 {
+    width: min(19vw, 78px) !important;
+    max-width: 78px !important;
+  }
+}
+
+/* Short portrait phones: compress vertical spacing only; desktop
+   remains completely unaffected. */
+@media (max-width: 600px) and (orientation: portrait) and (max-height: 700px) {
+  .left-info-image-button {
+    top: 23vh !important;
+  }
+
+  .registration-promo {
+    top: 24vh !important;
+  }
+
+  .price-scroll {
+    top: 36vh !important;
+  }
+
+  .castle-world {
+    top: 36vh !important;
+    width: min(69vw, 275px) !important;
+  }
+
+  .subject-world {
+    top: 67vh !important;
+    height: 21vh !important;
+  }
+
+  .subject-island,
+  .subject-7 {
+    width: min(19vw, 76px) !important;
+    max-width: 76px !important;
+  }
+}
+
+/* Final mobile collision cleanup: the castle glow/halo must not
+   render as a large dark panel over the artwork. */
+@media (max-width: 600px) and (orientation: portrait) {
+  .castle-halo {
+    display: none !important;
+  }
+
+  .left-info-image-button {
+    top: 21vh !important;
+    left: 4vw !important;
+    width: min(35vw, 180px) !important;
+    z-index: 82 !important;
+  }
+
+  .castle-world {
+    top: 39.5vh !important;
+    width: min(69vw, 280px) !important;
+  }
+
+  .hint-castle {
+    bottom: -9px !important;
+  }
+}
+
+@media (max-width: 390px) and (orientation: portrait) {
+  .left-info-image-button {
+    top: 20.5vh !important;
+    width: min(36vw, 148px) !important;
+  }
+
+  .castle-world {
+    top: 40vh !important;
+    width: min(68vw, 265px) !important;
+  }
+}
