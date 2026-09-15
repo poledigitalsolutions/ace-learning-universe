@@ -7833,3 +7833,26 @@ body {
     max-width: 178px !important;
   }
 }
+
+/* ============================================================
+   FINAL LOGO SIZE ONLY
+   The logo is visually enlarged without changing the layout
+   positions of any other element.
+============================================================ */
+
+/* Laptop / desktop: larger logo, same anchor and layout footprint. */
+@media (min-width: 901px) {
+  .main-logo.large-logo {
+    transform: scale(1.28);
+    transform-origin: top left;
+  }
+}
+
+/* Mobile portrait: larger logo, while preserving the existing
+   information panel and all other mobile positioning. */
+@media (max-width: 600px) and (orientation: portrait) {
+  .main-logo.large-logo {
+    transform: scale(1.28);
+    transform-origin: top left;
+  }
+}
