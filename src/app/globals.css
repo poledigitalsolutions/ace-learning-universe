@@ -7730,3 +7730,106 @@ body {
     width: clamp(142px, 40vw, 178px) !important;
   }
 }
+
+/* ============================================================
+   FINAL V5 — MOBILE INFO POSITION + DECORATION EDGE MASKING
+   Only the requested issues are addressed here.
+   Desktop/laptop object positioning remains unchanged.
+============================================================ */
+
+/*
+ * The environmental artwork uses several rectangular source images.
+ * These masks feather ALL four edges so the source-image boundaries
+ * cannot appear as visible rectangles/seams on either desktop or mobile.
+ */
+.background-cloud,
+.distant-worlds,
+.mist-layer,
+.sparkles-layer,
+.particles-layer,
+.birds-layer {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  -webkit-mask-image:
+    linear-gradient(to right,
+      transparent 0%,
+      #000 7%,
+      #000 93%,
+      transparent 100%),
+    linear-gradient(to bottom,
+      transparent 0%,
+      #000 7%,
+      #000 93%,
+      transparent 100%) !important;
+  mask-image:
+    linear-gradient(to right,
+      transparent 0%,
+      #000 7%,
+      #000 93%,
+      transparent 100%),
+    linear-gradient(to bottom,
+      transparent 0%,
+      #000 7%,
+      #000 93%,
+      transparent 100%) !important;
+  -webkit-mask-composite: source-in !important;
+  mask-composite: intersect !important;
+}
+
+/* Full-viewport decoration layers need only a very subtle edge fade. */
+.sparkles-layer,
+.particles-layer {
+  -webkit-mask-image:
+    linear-gradient(to right,
+      transparent 0%,
+      #000 3%,
+      #000 97%,
+      transparent 100%),
+    linear-gradient(to bottom,
+      transparent 0%,
+      #000 3%,
+      #000 97%,
+      transparent 100%) !important;
+  mask-image:
+    linear-gradient(to right,
+      transparent 0%,
+      #000 3%,
+      #000 97%,
+      transparent 100%),
+    linear-gradient(to bottom,
+      transparent 0%,
+      #000 3%,
+      #000 97%,
+      transparent 100%) !important;
+  -webkit-mask-composite: source-in !important;
+  mask-composite: intersect !important;
+}
+
+@media (max-width: 600px) and (orientation: portrait) {
+  /*
+   * Put the information cards immediately below the logo.
+   * This is deliberately a viewport-relative position rather than
+   * a position inside .brand-area, whose height changes with content.
+   */
+  .left-info-image-button {
+    position: fixed !important;
+    top: 11.5vh !important;
+    left: 4vw !important;
+    width: clamp(150px, 39vw, 205px) !important;
+    max-width: 205px !important;
+    margin: 0 !important;
+    transform: none !important;
+    z-index: 82 !important;
+  }
+}
+
+@media (max-width: 390px) and (orientation: portrait) {
+  .left-info-image-button {
+    top: 11.2vh !important;
+    left: 4vw !important;
+    width: clamp(142px, 40vw, 178px) !important;
+    max-width: 178px !important;
+  }
+}
